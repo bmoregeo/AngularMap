@@ -6,7 +6,7 @@
             <input type="text"
                    class="form-control"
                    ng-model="locator.value"
-                   typeahead="county.name for county in locator.counties | filter:$viewValue | limitTo:8"
+                   typeahead="feature.properties.NAME for feature in locator.features | filter:$viewValue | limitTo:8"
                    name="locator_value"
                    placeholder="{{locator.label}}"
                    >

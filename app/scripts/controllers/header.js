@@ -1,10 +1,10 @@
 'use strict';
 
 angular.module('mapAppApp')
-  .controller('HeaderCtrl', ['$scope', 'Counties', function ($scope, Counties) {
+  .controller('HeaderCtrl', ['$scope', 'Counties', 'Config', function ($scope, Counties, Config) {
 
-
-    $scope.title = 'Example Angular Leaflet App';
+    $scope.title = Config.title;
+    $scope.map = Config.map;
     $scope.locator = {
         label: 'Select County',
         value: 'Harford County, MD',
@@ -14,9 +14,8 @@ angular.module('mapAppApp')
             }
           }
       };
-    Counties.get(function(data){
-        $scope.locator.counties = data;
-        console.log(data);
-      });
 
+    Counties.get(function(data){
+        $scope.locator = data;
+      });
   }]);
