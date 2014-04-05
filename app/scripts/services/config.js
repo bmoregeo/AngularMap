@@ -26,11 +26,11 @@ angular.module('mapAppApp')
                       }
                     }
                   },
-              overlays: {
-                  buildings: {
-                      name:'Buildings',
+              overlaylayers: {
+                  water: {
+                      name:'water',
                       type: 'geoJSON',
-                      url:'http://tile.openstreetmap.us/vectiles-buildings/{z}/{x}/{y}.json',
+                      url:'http://tile.openstreetmap.us/vectiles-water-areas/{z}/{x}/{y}.json',
                       layerOptions: {
                           style: {
                               color: "#00D",

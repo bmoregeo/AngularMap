@@ -4,7 +4,7 @@ angular.module('mapAppApp')
   .controller('MapCtrl', ['$scope', '$location', 'Config', 'Counties', function ($scope, $location, Config, Counties) {
 
     $scope.baselayers = Config.map.baselayers;
-    $scope.overlaylayers = Config.map.overlays;
+    $scope.overlaylayers = Config.map.overlaylayers;
 
     $scope.layers = {
         baselayers:{
@@ -12,7 +12,7 @@ angular.module('mapAppApp')
             cloudmade: $scope.baselayers.cloudmade
           },
         overlays:{
-            buildings: $scope.overlaylayers.buildings
+            water: $scope.overlaylayers.water
         }
 
         };
