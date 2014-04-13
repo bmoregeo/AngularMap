@@ -10,6 +10,21 @@ angular.module('mapAppApp')
                 lng: -76.706944,
                 zoom: 12
               },
+            geojson: {
+                counties:{
+                    url:'/data/county/gz_2010_us_050_00_20m.json',
+                    style: function style(feature) {
+                        return {
+                            fillColor: "red",
+                            weight: 2,
+                            opacity: 1,
+                            color: 'white',
+                            dashArray: '3',
+                            fillOpacity: 0.4
+                        };
+                    }
+                  }
+                },
               baselayers:{
                   osm: {
                     name: 'Open Street Map',
@@ -33,16 +48,12 @@ angular.module('mapAppApp')
                       url:'http://tile.openstreetmap.us/vectiles-water-areas/{z}/{x}/{y}.json',
                       layerOptions: {
                           style: {
-                              color: "#00D",
                               fillColor: "#00D",
-                              weight: 1.0,
-                              opacity: 0.6,
+                              weight: 0,
                               fillOpacity: .2
                             }
                         },
-                      pluginOptions:{
-                          cliptiles: true
-                      }
+                      visible:'true'
                     }
                 }
                 }

@@ -11,22 +11,11 @@ angular.module('mapAppApp')
             osm: $scope.baselayers.osm,
             cloudmade: $scope.baselayers.cloudmade
           },
-        overlays:{
-            water: $scope.overlaylayers.water
-        }
+        overlays:{}
 
         };
 
-    function style(feature) {
-        return {
-            fillColor: "red",
-            weight: 2,
-            opacity: 1,
-            color: 'white',
-            dashArray: '3',
-            fillOpacity: 0.4
-        };
-    }
+
 
 
     $scope.center = Config.map.initialCenter;
@@ -34,15 +23,10 @@ angular.module('mapAppApp')
     $scope.$on('centerUrlHash', function(event, centerHash) {
         $location.search({ c: centerHash });
       });
-    /*
+
     Counties.get(function(data){
-        $scope.geojson = {
-            data: data,
-            style: style
-            //onEachFeature: onEachFeature,
-            //resetStyleOnMouseout: true
-        };
+        $scope.geojson = data;
       });
-    */
+
 
   }]);
